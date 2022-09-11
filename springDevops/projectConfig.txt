@@ -1,0 +1,8 @@
+01) Create Spring boot project and expose the end points.
+02) Add <finalName>docker-jenkins-integration-sample</finalName> pom.xml after plugins.
+03) Create Dockerfile and add below codes.
+	FROM openjdk:8
+	EXPOSE 8080
+	ADD target/docker-jenkins-integration-sample.jar docker-jenkins-integration-sample.jar
+	ENTRYPOINT ["java","-jar","/docker-jenkins-integration-sample.jar"]
+04) 
