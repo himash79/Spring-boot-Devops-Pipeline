@@ -17,3 +17,16 @@
 	Click generate pipeline script.
 	Add script to jenkins file.
 07) Configure the manve nin jenkins.
+08) Follow this,
+	Windows doesn't understand the "sh" command. To enable this, add
+	C:\Program Files\Git\bin &
+	C:\Program Files\Git\usr\bin
+	to the System Environment variable PATH, than restart your system.
+	Than execute your command in jenkins, it will work. 
+09) Add <finalName>devops-integration</finalName> to pom.xml
+10) Create docker file and add below details,
+	FROM openjdk:8
+	EXPOSE 8080
+	ADD target/devops-integration.jar devops-integration.jar
+	ENTRYPOINT ["java","-jar","/devops-integration.jar"]
+11) Build the porject.
