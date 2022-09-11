@@ -5,4 +5,15 @@
 	EXPOSE 8080
 	ADD target/docker-jenkins-integration-sample.jar docker-jenkins-integration-sample.jar
 	ENTRYPOINT ["java","-jar","/docker-jenkins-integration-sample.jar"]
-04) 
+04) Create project in jenkins.
+03) Create item --> Give name --> Choose Pipeline project --> Save.
+04) Add Description --> Select Github project --> Add project URL
+05) Check GitHub hook trigger for GITScm polling.
+06) Create pipeline to github repository.
+	Click pipeline syntax.
+	checkout: checkout from version control.
+	Add github repository URL.
+	Add branch name.
+	Click generate pipeline script.
+	Add script to jenkins file.
+07) Configure the manve nin jenkins.
