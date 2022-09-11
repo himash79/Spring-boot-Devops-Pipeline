@@ -8,7 +8,7 @@
 04) Create project in jenkins.
 03) Create item --> Give name --> Choose Pipeline project --> Save.
 04) Add Description --> Select Github project --> Add project URL
-05) Check GitHub hook trigger for GITScm polling.
+05) Check GitHub hook trigger for GITScm polling and Checked Poll SCM add valuesble (ex : * * * * *)..
 06) Create pipeline to github repository.
 	Click pipeline syntax.
 	checkout: checkout from version control.
@@ -61,6 +61,27 @@
                 }
             }
         }
+17) Build project in Jenkins.
+
+=============================== BEGIN SECOND STEP JENKINS BUILD STEP ==================================================
+
+01) Create jenkinsfile and Add all scripts to it and push file to github.
+02) Create new Jenkins project. 
+03) Create item --> Give name --> Choose Pipeline project --> Save.
+04) Add Description --> Select Github project --> Add project URL
+05) Check GitHub hook trigger for GITScm polling.
+06) Checked Poll SCM add valuesble (ex : * * * * *).
+07) Select pipeline script from SCM.
+08) Select Git under SCM.
+09) Take repository URL.
+10) Check branch details.
+11) Select OK and build the project.
+
+=============================== END SECOND STEP JENKINS BUILD STEP ==================================================
+
+18) Check dockerhub build success status.
+19) Run the image and expose the end point. docker run -p 8080:8080 [repo name]
+
 
 
 
