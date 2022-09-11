@@ -30,3 +30,39 @@
 	ADD target/devops-integration.jar devops-integration.jar
 	ENTRYPOINT ["java","-jar","/devops-integration.jar"]
 11) Build the porject.
+12) Push modification to github repository.
+13) Add below pipeline script to jenkins pipeline.
+	stage('Build docker image'){
+            steps{
+                script{
+                    sh 'docker build -t javatechie/devops-integration .'
+                }
+            }
+        }
+14) Add docker plugin to jenkins. (Global tool configuration and manage plugins) 
+15) Add dockerhub pipeline script as below.
+	Click pipeline sytax.
+	Select with Credentials(Bind credentials to variable).
+	Give variable name.
+	Click Add.
+	Select Secret text under Kind.
+	Add Secret(Jenkins password).
+	ID (any value)
+	Click Generate Pipeline Script.
+16) Add this stage jenkins pipeline as below
+	        stage('Push image to Hub'){
+            steps{
+                script{
+                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+                   sh 'docker login -u ${dockerusername} -p ${dockerhubpwd}'
+
+}
+                   sh 'docker push ${dockerusername}/devops-integration'
+                }
+            }
+        }
+
+
+
+
+
